@@ -1,6 +1,7 @@
 package com.harry.robert.RWCSweepies.controller;
 
 
+import com.harry.robert.RWCSweepies.exception.NotEnoughPeopleException;
 import com.harry.robert.RWCSweepies.model.Team;
 import com.harry.robert.RWCSweepies.service.SweepstakeService;
 import lombok.RequiredArgsConstructor;
@@ -28,7 +29,7 @@ public class SweepstakeController {
     }
 
     @RequestMapping(path="/generate")
-    public Map<String, Team> generateSweepstake() throws SQLException {
+    public Map<String, Team> generateSweepstake() throws SQLException, NotEnoughPeopleException {
         return sweepstakeService.generate();
     }
 }

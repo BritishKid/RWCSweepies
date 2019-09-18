@@ -1,6 +1,7 @@
 package com.harry.robert.RWCSweepies.service;
 
 
+import com.harry.robert.RWCSweepies.exception.NotEnoughPeopleException;
 import com.harry.robert.RWCSweepies.model.Team;
 import com.harry.robert.RWCSweepies.repository.SweepstakeRepository;
 import lombok.RequiredArgsConstructor;
@@ -23,16 +24,21 @@ public class SweepstakeService {
     private final SweepstakeRepository sweepstakeRepository;
 
     public void addParticipant(String participant) throws SQLException {
-        if(validateParticipants()) sweepstakeRepository.addParticipant(participant);
+        if (validateParticipants()) sweepstakeRepository.addParticipant(participant);
     }
 
-    public Map<String, Team> generate() throws SQLException {
+    public Map<String, Team> generate() throws SQLException, NotEnoughPeopleException {
         List<String> participantList = sweepstakeRepository.getParticipants();
+
+        if (participantList.size() != 20) {
+            throw new NotEnoughPeopleException(String.format("Not enough parcipants only have %d of 20", participantList.size()));
+        }
+
         List<Team> teamList = sweepstakeRepository.getTeams();
 
         Map<String, Team> results = new HashMap<>();
 
-        while(!participantList.isEmpty()) {
+        while (!participantList.isEmpty()) {
             int randomValue1 = (int) (Math.random() * participantList.size());
             int randomValue2 = (int) (Math.random() * teamList.size());
 
@@ -60,8 +66,6 @@ public class SweepstakeService {
     }
 
     private boolean validateParticipants() throws SQLException {
-        if(sweepstakeRepository.getParticipants().size() >= 20) return false;
-
-        return true;
+        return sweepstakeRepository.getParticipants().size() < 20;
     }
 }
