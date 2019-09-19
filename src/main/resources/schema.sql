@@ -7,7 +7,8 @@ create table participants
 create table teams
 (
     name varchar(255) not null,
-    url varchar(255)
+    url varchar(255),
+    pool varchar(15)
 );
 
 create table fixtures

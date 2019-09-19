@@ -10,5 +10,6 @@ public class Team {
 
     private String name;
     private String url;
+    private String pool;
 
 }
