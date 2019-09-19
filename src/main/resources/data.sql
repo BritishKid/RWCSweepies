@@ -1,28 +1,28 @@
-insert into teams values ('Argentina', '', 'Pool C');
-insert into teams values ('Australia', '', 'Pool D');
-insert into teams values ('Canada', '', 'Pool B');
-insert into teams values ('England', 'https://www.sportbirmingham.org/images/files/22741/128x128.png', 'Pool C');
-insert into teams values ('Fiji', '', 'Pool D');
-insert into teams values ('France', '', 'Pool C');
-insert into teams values ('Georgia', '', 'Pool D');
-insert into teams values ('Ireland', '', 'Pool A');
-insert into teams values ('Italy', '', 'Pool B');
-insert into teams values ('Japan', '', 'Pool A');
-insert into teams values ('Namibia', '', 'Pool B');
-insert into teams values ('New Zealand', '', 'Pool B');
-insert into teams values ('Russia', '', 'Pool A');
-insert into teams values ('Samoa', '', 'Pool A');
-insert into teams values ('Scotland', '', 'Pool A');
-insert into teams values ('South Africa', '', 'Pool B');
-insert into teams values ('Tonga', '', 'Pool C');
-insert into teams values ('Uruguay', '', 'Pool D');
-insert into teams values ('USA', '', 'Pool C');
-insert into teams values ('Wales', '', 'Pool D');
+insert into teams values (1, 'Argentina', '', 'Pool C');
+insert into teams values (2, 'Australia', '', 'Pool D');
+insert into teams values (3, 'Canada', '', 'Pool B');
+insert into teams values (4, 'England', 'https://www.sportbirmingham.org/images/files/22741/128x128.png', 'Pool C');
+insert into teams values (5, 'Fiji', '', 'Pool D');
+insert into teams values (6, 'France', '', 'Pool C');
+insert into teams values (7, 'Georgia', '', 'Pool D');
+insert into teams values (8, 'Ireland', '', 'Pool A');
+insert into teams values (9, 'Italy', '', 'Pool B');
+insert into teams values (10, 'Japan', '', 'Pool A');
+insert into teams values (11, 'Namibia', '', 'Pool B');
+insert into teams values (12, 'New Zealand', '', 'Pool B');
+insert into teams values (13, 'Russia', '', 'Pool A');
+insert into teams values (14, 'Samoa', '', 'Pool A');
+insert into teams values (15, 'Scotland', '', 'Pool A');
+insert into teams values (16, 'South Africa', '', 'Pool B');
+insert into teams values (17, 'Tonga', '', 'Pool C');
+insert into teams values (18, 'Uruguay', '', 'Pool D');
+insert into teams values (19, 'USA', '', 'Pool C');
+insert into teams values (20, 'Wales', '', 'Pool D');
 
-insert into fixtures values ('Japan', 'Russia', '2019-09-20', '11:45:00', 'Tokyo Stadium, Tokyo', 'Pool A')
-insert into fixtures values ('Australia', 'Fiji', '2019-09-21', '5:45:0', 'Sapporo Dome, Sapporo', 'Pool D')
-insert into fixtures values ('France', 'Argentina', '2019-09-21', '08:15:00', 'Tokyo Stadium, Tokyo', 'Pool C')
-insert into fixtures values ('New Zealand', 'South Africa', '2019-09-21', '10:45:00', 'International Stadium Yokohama, Kanagawa Prefecture, Yokohama City', 'Pool B')
+insert into fixtures values (1, 10, 13, '2019-09-20', '11:45:00', 'Tokyo Stadium, Tokyo', 'Pool A')
+insert into fixtures values (2, 2, 5, '2019-09-21', '5:45:0', 'Sapporo Dome, Sapporo', 'Pool D')
+insert into fixtures values (3, 6, 1, '2019-09-21', '08:15:00', 'Tokyo Stadium, Tokyo', 'Pool C')
+insert into fixtures values (4, 12, 16, '2019-09-21', '10:45:00', 'International Stadium Yokohama, Kanagawa Prefecture, Yokohama City', 'Pool B')
 
 
 --Test data

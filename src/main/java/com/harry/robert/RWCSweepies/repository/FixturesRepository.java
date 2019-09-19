@@ -18,17 +18,17 @@ public class FixturesRepository extends GenericRepository {
     }
 
     public List<Match> getAllFixtures() throws SQLException {
-        String sql = "SELECT * FROM fixtures";
+        String sql = "SELECT * FROM fixtures INNER JOIN teams ON fixtures.awayTeam=teams.teamId INNER JOIN teams ON fixtures.homeTeam=teams.teamId";
         return executeGetFixtureSQL(sql);
     }
 
     public List<Match> getTeamFixtures(String team) throws SQLException {
-        String sql = String.format("SELECT * FROM fixtures WHERE homeTeam = '%s' OR awayTeam = '%s'", team, team);
+        String sql = String.format("SELECT * FROM fixtures INNER JOIN teams ON fixtures.awayTeam=teams.teamId INNER JOIN teams ON fixtures.homeTeam=teams.teamId WHERE homeTeam = '%s' OR awayTeam = '%s'", team, team);
         return executeGetFixtureSQL(sql);
     }
 
     public List<Match> getTypeFixtures(String type) throws SQLException {
-        String sql = String.format("SELECT * FROM fixtures WHERE gameType = '%s'", type);
+        String sql = String.format("SELECT * FROM fixtures INNER JOIN teams ON fixtures.awayTeam=teams.teamId INNER JOIN teams ON fixtures.homeTeam=teams.teamId WHERE gameType = '%s'", type);
         return executeGetFixtureSQL(sql);
     }
 
