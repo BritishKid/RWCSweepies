@@ -1,8 +1,6 @@
 package com.harry.robert.RWCSweepies.repository;
 
 import com.harry.robert.RWCSweepies.model.Match;
-import com.harry.robert.RWCSweepies.model.Team;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
@@ -20,26 +18,25 @@ public class FixturesRepository extends GenericRepository {
     }
 
     public List<Match> getAllFixtures() throws SQLException {
-        statement.getConnection();
-
         String sql = "SELECT * FROM fixtures";
-
-        statement.execute(sql);
-        ResultSet resultSet = statement.getResultSet();
-        return filterResultSet(resultSet);
+        return executeGetFixtureSQL(sql);
     }
 
     public List<Match> getTeamFixtures(String team) throws SQLException {
-        statement.getConnection();
-
         String sql = String.format("SELECT * FROM fixtures WHERE homeTeam = '%s' OR awayTeam = '%s'", team, team);
-
-        statement.execute(sql);
-        ResultSet resultSet = statement.getResultSet();
-        return filterResultSet(resultSet);
+        return executeGetFixtureSQL(sql);
     }
 
-    private List<Match> filterResultSet(ResultSet resultSet) throws SQLException {
+    public List<Match> getTypeFixtures(String type) throws SQLException {
+        String sql = String.format("SELECT * FROM fixtures WHERE gameType = '%s'", type);
+        return executeGetFixtureSQL(sql);
+    }
+
+    private List<Match> executeGetFixtureSQL(String sql) throws SQLException {
+        statement.getConnection();
+        statement.execute(sql);
+        ResultSet resultSet = statement.getResultSet();
+
         List<Match> fixtures = new ArrayList<>();
 
         while (resultSet.next()) {

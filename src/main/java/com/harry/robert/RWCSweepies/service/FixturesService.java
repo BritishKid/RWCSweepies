@@ -21,4 +21,8 @@ public class FixturesService {
     public List<Match> getTeamFixtures(String team) throws SQLException {
         return fixturesRepository.getTeamFixtures(team);
     }
+
+    public List<Match> getTypeFixtures(String type) throws SQLException {
+        return fixturesRepository.getTypeFixtures(type);
+    }
 }
