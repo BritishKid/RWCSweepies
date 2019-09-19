@@ -6,7 +6,7 @@ create table participants
 
 create table teams
 (
-    teamId int not null,
+    teamId int not null  AUTO_INCREMENT,
     name varchar(255) not null,
     url varchar(255),
     pool varchar(15),
@@ -15,7 +15,7 @@ create table teams
 
 create table fixtures
 (
-    matchId int not null,
+    matchId int not null  AUTO_INCREMENT,
     homeTeam int,
     awayTeam int,
     date DATE,
@@ -27,11 +27,13 @@ create table fixtures
 
 create table results
 (
-   matchId int not null,
+   matchId int not null  AUTO_INCREMENT,
+   homeTeam int,
    homeScore int,
    homeTries int,
    homeConversions int,
    homePenalties int,
+   awayTeam int,
    awayScore int,
    awayTries int,
    awayConversions int,

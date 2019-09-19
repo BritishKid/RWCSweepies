@@ -18,17 +18,25 @@ public class FixturesRepository extends GenericRepository {
     }
 
     public List<Match> getAllFixtures() throws SQLException {
-        String sql = "SELECT * FROM fixtures INNER JOIN teams ON fixtures.awayTeam=teams.teamId INNER JOIN teams ON fixtures.homeTeam=teams.teamId";
+        String sql = "SELECT * FROM fixtures " +
+                "INNER JOIN teams ON fixtures.awayTeam=teams.teamId " +
+                "INNER JOIN teams ON fixtures.homeTeam=teams.teamId";
         return executeGetFixtureSQL(sql);
     }
 
     public List<Match> getTeamFixtures(String team) throws SQLException {
-        String sql = String.format("SELECT * FROM fixtures INNER JOIN teams ON fixtures.awayTeam=teams.teamId INNER JOIN teams ON fixtures.homeTeam=teams.teamId WHERE homeTeam = '%s' OR awayTeam = '%s'", team, team);
+        String sql = String.format("SELECT * FROM fixtures " +
+                "INNER JOIN teams ON fixtures.awayTeam=teams.teamId " +
+                "INNER JOIN teams ON fixtures.homeTeam=teams.teamId " +
+                "WHERE homeTeam = '%s' OR awayTeam = '%s'", team, team);
         return executeGetFixtureSQL(sql);
     }
 
     public List<Match> getTypeFixtures(String type) throws SQLException {
-        String sql = String.format("SELECT * FROM fixtures INNER JOIN teams ON fixtures.awayTeam=teams.teamId INNER JOIN teams ON fixtures.homeTeam=teams.teamId WHERE gameType = '%s'", type);
+        String sql = String.format("SELECT * FROM fixtures " +
+                "INNER JOIN teams ON fixtures.awayTeam=teams.teamId " +
+                "INNER JOIN teams ON fixtures.homeTeam=teams.teamId " +
+                "WHERE gameType = '%s'", type);
         return executeGetFixtureSQL(sql);
     }
 
@@ -41,6 +49,7 @@ public class FixturesRepository extends GenericRepository {
 
         while (resultSet.next()) {
             Match match = new Match();
+            match.setMatchId(resultSet.getInt("matchId"));
             match.setHomeTeam(resultSet.getString("homeTeam"));
             match.setAwayTeam(resultSet.getString("awayTeam"));
             match.setDate(resultSet.getDate("date").toLocalDate());

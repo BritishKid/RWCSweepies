@@ -26,7 +26,7 @@ public class FixturesController {
         return fixturesService.getTeamFixtures(team);
     }
 
-    @RequestMapping(path = "fixtures/type={type}")
+    @RequestMapping(path = "/fixtures/type={type}")
     public List<Match> getTypeFixture(@PathVariable("type") String type) throws SQLException {
         return fixturesService.getTypeFixtures(type);
     }

@@ -7,7 +7,7 @@ import java.time.LocalTime;
 
 @Setter
 public class Match {
-
+    private int matchId;
     private String homeTeam;
     private String awayTeam;
     private LocalDate date;
