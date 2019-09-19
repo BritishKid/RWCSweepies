@@ -26,9 +26,9 @@ insert into fixtures values ('New Zealand', 'South Africa', '2019-09-21', '10:45
 
 
 --Test data
-insert into participants values ('player 1');
-insert into participants values ('player 2');
-insert into participants values ('player 3');
+insert into participants values ('Pete');
+insert into participants values ('Robert');
+insert into participants values ('Harry');
 insert into participants values ('player 4');
 insert into participants values ('player 5');
 insert into participants values ('player 6');

@@ -26,6 +26,20 @@ public class FixturesRepository extends GenericRepository {
 
         statement.execute(sql);
         ResultSet resultSet = statement.getResultSet();
+        return filterResultSet(resultSet);
+    }
+
+    public List<Match> getTeamFixtures(String team) throws SQLException {
+        statement.getConnection();
+
+        String sql = String.format("SELECT * FROM fixtures WHERE homeTeam = '%s' OR awayTeam = '%s'", team, team);
+
+        statement.execute(sql);
+        ResultSet resultSet = statement.getResultSet();
+        return filterResultSet(resultSet);
+    }
+
+    private List<Match> filterResultSet(ResultSet resultSet) throws SQLException {
         List<Match> fixtures = new ArrayList<>();
 
         while (resultSet.next()) {
