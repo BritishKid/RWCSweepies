@@ -3,8 +3,6 @@ package com.harry.robert.RWCSweepies.repository;
 import com.harry.robert.RWCSweepies.model.Team;
 import org.springframework.stereotype.Repository;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -12,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class SweepstakeRepository {
+public class SweepstakeRepository  extends GenericRepository{
 
     private Statement statement = createConnection();
 
@@ -39,11 +37,9 @@ public class SweepstakeRepository {
         }
 
         return result;
-
     }
 
     public List<Team> getTeams() throws SQLException {
-
         statement = createConnection();
 
         String sql = "SELECT * FROM teams";
@@ -59,13 +55,6 @@ public class SweepstakeRepository {
 
             result.add(team);
         }
-
         return result;
     }
-
-    private Statement createConnection() throws SQLException {
-        Connection connection = DriverManager.getConnection("jdbc:h2:mem:testdb", "sa", "password");
-        return connection.createStatement();
-    }
-
 }

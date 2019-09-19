@@ -9,7 +9,7 @@ insert into teams values ('Ireland', '');
 insert into teams values ('Italy', '');
 insert into teams values ('Japan', '');
 insert into teams values ('Namibia', '');
-insert into teams values ('New Zealand', '');
+insert into teams values ('New ``', '');
 insert into teams values ('Russia', '');
 insert into teams values ('Samoa', '');
 insert into teams values ('Scotland', '');
@@ -19,6 +19,13 @@ insert into teams values ('Uruguay', '');
 insert into teams values ('USA', '');
 insert into teams values ('Wales', '');
 
+insert into fixtures values ('Japan', 'Russia', '2019-09-20', '11:45:00', 'Tokyo Stadium, Tokyo', 'Pool A')
+insert into fixtures values ('Australia', 'Fiji', '2019-09-21', '5:45:0', 'Sapporo Dome, Sapporo', 'Pool D')
+insert into fixtures values ('France', 'Argentina', '2019-09-21', '08:15:00', 'Tokyo Stadium, Tokyo', 'Pool C')
+insert into fixtures values ('New Zealand', 'South Africa', '2019-09-21', '10:45:00', 'International Stadium Yokohama, Kanagawa Prefecture, Yokohama City', 'Pool B')
+
+
+--Test data
 insert into participants values ('player 1');
 insert into participants values ('player 2');
 insert into participants values ('player 3');
