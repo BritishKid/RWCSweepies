@@ -53,6 +53,7 @@ public class SweepstakeRepository  extends GenericRepository{
             team.setTeamId(resultSet.getInt("teamId"));
             team.setName(resultSet.getString("name"));
             team.setUrl(resultSet.getString("url"));
+            team.setPool(resultSet.getString("pool"));
             result.add(team);
         }
         return result;

@@ -40,7 +40,7 @@ insert into participants values ('YJ');
 insert into participants values ('Samir');
 insert into participants values ('Tarek'); --Paid
 insert into participants values ('Antonio');
-insert into participants values ('Basile');
+insert into participants values ('Basile'); --Paid
 insert into participants values ('player  17');
 insert into participants values ('player 16');
 insert into participants values ('player 20');
