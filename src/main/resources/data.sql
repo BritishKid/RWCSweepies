@@ -18,11 +18,11 @@ insert into teams values (17, 'Tonga', '', 'Pool C');
 insert into teams values (18, 'Uruguay', '', 'Pool D');
 insert into teams values (19, 'USA', '', 'Pool C');
 insert into teams values (20, 'Wales', '', 'Pool D');
-
-insert into fixtures values ( 10, 13, '2019-09-20', '11:45:00', 'Tokyo Stadium, Tokyo', 'Pool A')
-insert into fixtures values ( 2, 5, '2019-09-21', '5:45:0', 'Sapporo Dome, Sapporo', 'Pool D')
-insert into fixtures values ( 6, 1, '2019-09-21', '08:15:00', 'Tokyo Stadium, Tokyo', 'Pool C')
-insert into fixtures values ( 12, 16, '2019-09-21', '10:45:00', 'International Stadium Yokohama, Kanagawa Prefecture, Yokohama City', 'Pool B')
+--
+--insert into fixtures values ( 10, 13, '2019-09-20', '11:45:00', 'Tokyo Stadium, Tokyo', 'Pool A')
+--insert into fixtures values ( 2, 5, '2019-09-21', '5:45:0', 'Sapporo Dome, Sapporo', 'Pool D')
+--insert into fixtures values ( 6, 1, '2019-09-21', '08:15:00', 'Tokyo Stadium, Tokyo', 'Pool C')
+--insert into fixtures values ( 12, 16, '2019-09-21', '10:45:00', 'International Stadium Yokohama, Kanagawa Prefecture, Yokohama City', 'Pool B')
 
 
 --Test data
@@ -38,9 +38,9 @@ insert into participants values ('Vijaya');
 insert into participants values ('Himedri'); --Paid
 insert into participants values ('YJ');
 insert into participants values ('Samir');
-insert into participants values ('player 13');
-insert into participants values ('player 14');
-insert into participants values ('player 15');
+insert into participants values ('Tarek'); --Paid
+insert into participants values ('Antonio');
+insert into participants values ('Basile');
 insert into participants values ('player  17');
 insert into participants values ('player 16');
 insert into participants values ('player 20');

@@ -1,6 +1,7 @@
 package com.harry.robert.RWCSweepies.repository;
 
 import com.harry.robert.RWCSweepies.model.Result;
+import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,6 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class ResultRepository extends GenericRepository {
 
     Statement statement = createConnection();
