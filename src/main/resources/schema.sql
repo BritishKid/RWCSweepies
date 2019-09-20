@@ -10,7 +10,7 @@ create table teams
     name varchar(255) not null,
     url varchar(255),
     pool varchar(15),
-    PRIMARY KEY teamId
+    PRIMARY KEY (teamId)
 );
 
 create table fixtures
@@ -22,7 +22,7 @@ create table fixtures
     kickoff TIME,
     location varchar(255),
     gameType varchar(255),
-    PRIMARY KEY matchId
+    PRIMARY KEY (matchId)
 );
 
 create table results
