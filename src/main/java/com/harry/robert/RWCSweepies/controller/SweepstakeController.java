@@ -1,6 +1,5 @@
 package com.harry.robert.RWCSweepies.controller;
 
-
 import com.harry.robert.RWCSweepies.exception.NotEnoughPeopleException;
 import com.harry.robert.RWCSweepies.model.Team;
 import com.harry.robert.RWCSweepies.service.SweepstakeService;

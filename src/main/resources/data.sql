@@ -33,16 +33,16 @@ insert into participants values ('Raj'); --Paid
 insert into participants values ('Natraj');
 insert into participants values ('Chris B');
 insert into participants values ('Chris R'); --Paid
-insert into participants values ('Ramesh');
+insert into participants values ('Ramesh'); --Paid
 insert into participants values ('Vijaya');
 insert into participants values ('Himedri'); --Paid
 insert into participants values ('YJ');
 insert into participants values ('Samir');
 insert into participants values ('Tarek'); --Paid
-insert into participants values ('Antonio');
+insert into participants values ('Antonio'); --Paid
 insert into participants values ('Basile'); --Paid
-insert into participants values ('player  17');
-insert into participants values ('player 16');
-insert into participants values ('player 20');
-insert into participants values ('player 19');
-insert into participants values ('player 18');
+insert into participants values ('Jo'); --Paid
+insert into participants values ('Nishanth'); --Paid
+insert into participants values ('Nikhil'); --Paid
+insert into participants values ('Aldolfo'); --Paid
+insert into participants values ('Paul');
