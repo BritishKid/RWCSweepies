@@ -18,11 +18,11 @@ insert into teams values (17, 'Tonga', '', 'Pool C');
 insert into teams values (18, 'Uruguay', '', 'Pool D');
 insert into teams values (19, 'USA', '', 'Pool C');
 insert into teams values (20, 'Wales', '', 'Pool D');
---
---insert into fixtures values ( 10, 13, '2019-09-20', '11:45:00', 'Tokyo Stadium, Tokyo', 'Pool A')
---insert into fixtures values ( 2, 5, '2019-09-21', '5:45:0', 'Sapporo Dome, Sapporo', 'Pool D')
---insert into fixtures values ( 6, 1, '2019-09-21', '08:15:00', 'Tokyo Stadium, Tokyo', 'Pool C')
---insert into fixtures values ( 12, 16, '2019-09-21', '10:45:00', 'International Stadium Yokohama, Kanagawa Prefecture, Yokohama City', 'Pool B')
+
+insert into fixtures values (1, 10, 13, '2019-09-20', '11:45:00', 'Tokyo Stadium, Tokyo', 'Pool A');
+insert into fixtures values (2,  2, 5, '2019-09-21', '5:45:0', 'Sapporo Dome, Sapporo', 'Pool D');
+insert into fixtures values (3, 6, 1, '2019-09-21', '08:15:00', 'Tokyo Stadium, Tokyo', 'Pool C');
+insert into fixtures values (4,  12, 16, '2019-09-21', '10:45:00', 'International Stadium Yokohama, Kanagawa Prefecture, Yokohama City', 'Pool B');
 
 
 --Test data
@@ -34,9 +34,9 @@ insert into participants values ('Natraj');
 insert into participants values ('Chris B');
 insert into participants values ('Chris R'); --Paid
 insert into participants values ('Ramesh'); --Paid
-insert into participants values ('Vijaya');
+insert into participants values ('Vijaya'); --Paid
 insert into participants values ('Himedri'); --Paid
-insert into participants values ('YJ');
+insert into participants values ('YJ'); --Paid
 insert into participants values ('Samir');
 insert into participants values ('Tarek'); --Paid
 insert into participants values ('Antonio'); --Paid
@@ -45,4 +45,4 @@ insert into participants values ('Jo'); --Paid
 insert into participants values ('Nishanth'); --Paid
 insert into participants values ('Nikhil'); --Paid
 insert into participants values ('Aldolfo'); --Paid
-insert into participants values ('Paul');
+insert into participants values ('Paul'); --Paid

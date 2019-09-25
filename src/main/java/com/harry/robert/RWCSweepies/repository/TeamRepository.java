@@ -7,16 +7,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
-public class SweepstakeRepository  extends GenericRepository{
+public class TeamRepository extends GenericRepository{
 
     private Statement statement = createConnection();
 
-    public SweepstakeRepository() throws SQLException {
+    public TeamRepository() throws SQLException {
     }
 
+    //todo speerate participants into own repository
     public void addParticipant(String participant) throws SQLException {
             String sql = String.format("INSERT INTO participant (name) VALUES (%s)", participant);
 
@@ -56,6 +59,34 @@ public class SweepstakeRepository  extends GenericRepository{
             team.setPool(resultSet.getString("pool"));
             result.add(team);
         }
+        return result;
+    }
+
+    public Map<Integer, String> getTeamIdToNameMap() throws SQLException {
+        String sql = "SELECT teamId, Name FROM TEAMS ";
+        statement.getConnection();
+        statement.execute(sql);
+        ResultSet resultSet = statement.getResultSet();
+
+        Map<Integer, String> result = new HashMap<>();
+        while (resultSet.next()) {
+            result.put(resultSet.getInt("teamId"), resultSet.getString("name"));
+        }
+
+        return result;
+    }
+
+    public Map<String, Integer> getNameToIdMap() throws SQLException {
+        String sql = "SELECT teamId, Name FROM TEAMS ";
+        statement.getConnection();
+        statement.execute(sql);
+        ResultSet resultSet = statement.getResultSet();
+
+        Map<String, Integer> result = new HashMap<>();
+        while (resultSet.next()) {
+            result.put(resultSet.getString("name"), resultSet.getInt("teamId"));
+        }
+
         return result;
     }
 }
