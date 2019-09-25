@@ -1,7 +1,8 @@
 create table participants
 (
-    name varchar(255) not null
-
+    id int,
+    name varchar(255) not null,
+    PRIMARY KEY (id)
 );
 
 create table teams
@@ -39,3 +40,9 @@ create table results
    awayConversions int,
    awayPenalties int
 );
+
+create table sweepstake
+(
+    participant int,
+    team int
+)
