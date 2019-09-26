@@ -63,7 +63,7 @@ public class TeamRepository extends GenericRepository{
     }
 
     public Map<Integer, String> getTeamIdToNameMap() throws SQLException {
-        String sql = "SELECT teamId, Name FROM TEAMS ";
+        String sql = "SELECT teamId, teamName FROM TEAMS ";
         statement.getConnection();
         statement.execute(sql);
         ResultSet resultSet = statement.getResultSet();
@@ -77,7 +77,7 @@ public class TeamRepository extends GenericRepository{
     }
 
     public Map<String, Integer> getNameToIdMap() throws SQLException {
-        String sql = "SELECT teamId, Name FROM TEAMS ";
+        String sql = "SELECT teamId, teamName FROM TEAMS ";
         statement.getConnection();
         statement.execute(sql);
         ResultSet resultSet = statement.getResultSet();
