@@ -1,14 +1,14 @@
 create table participants
 (
     id int,
-    name varchar(255) not null,
+    participantName varchar(255) not null,
     PRIMARY KEY (id)
 );
 
 create table teams
 (
     teamId int not null  AUTO_INCREMENT,
-    name varchar(255) not null,
+    teamName varchar(255) not null,
     url varchar(255),
     pool varchar(15),
     PRIMARY KEY (teamId)

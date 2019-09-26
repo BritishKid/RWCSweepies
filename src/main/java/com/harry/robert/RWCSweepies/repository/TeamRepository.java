@@ -36,7 +36,7 @@ public class TeamRepository extends GenericRepository{
         List<String> result = new ArrayList<>();
 
         while (resultSet.next()) {
-            result.add(resultSet.getString("name"));
+            result.add(resultSet.getString("participantName"));
         }
 
         return result;
@@ -54,7 +54,7 @@ public class TeamRepository extends GenericRepository{
         while (resultSet.next()) {
             Team team = new Team();
             team.setTeamId(resultSet.getInt("teamId"));
-            team.setName(resultSet.getString("name"));
+            team.setName(resultSet.getString("teamName"));
             team.setUrl(resultSet.getString("url"));
             team.setPool(resultSet.getString("pool"));
             result.add(team);
@@ -70,7 +70,7 @@ public class TeamRepository extends GenericRepository{
 
         Map<Integer, String> result = new HashMap<>();
         while (resultSet.next()) {
-            result.put(resultSet.getInt("teamId"), resultSet.getString("name"));
+            result.put(resultSet.getInt("teamId"), resultSet.getString("teamName"));
         }
 
         return result;
@@ -84,9 +84,29 @@ public class TeamRepository extends GenericRepository{
 
         Map<String, Integer> result = new HashMap<>();
         while (resultSet.next()) {
-            result.put(resultSet.getString("name"), resultSet.getInt("teamId"));
+            result.put(resultSet.getString("teamName"), resultSet.getInt("teamId"));
         }
 
         return result;
+    }
+
+    public Map<String, Team> getSweepstake() throws SQLException {
+        String sql = "SELECT * FROM SWEEPSTAKE " +
+                "INNER JOIN participants ON SWEEPSTAKE.PARTICIPANT = PARTICIPANTS.id " +
+                "INNER JOIN teams on sweepstake.team = teams.teamId";
+
+        statement.execute(sql);
+        ResultSet resultSet = statement.getResultSet();
+        Map<String, Team> results = new HashMap<>();
+
+        while (resultSet.next()) {
+            Team team = new Team();
+            team.setName(resultSet.getString("teamName"));
+            team.setUrl(resultSet.getString("url"));
+            team.setPool(resultSet.getString("pool"));
+            results.put(resultSet.getString("participantName"), team);
+        }
+
+        return results;
     }
 }

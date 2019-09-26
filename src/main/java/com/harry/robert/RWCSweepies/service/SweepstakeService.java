@@ -68,4 +68,8 @@ public class SweepstakeService {
     private boolean validateParticipants() throws SQLException {
         return teamRepository.getParticipants().size() < 20;
     }
+
+    public Map<String, Team> getSweepstake() throws SQLException {
+        return teamRepository.getSweepstake();
+    }
 }

@@ -31,4 +31,9 @@ public class SweepstakeController {
     public Map<String, Team> generateSweepstake() throws SQLException, NotEnoughPeopleException {
         return sweepstakeService.generate();
     }
+
+    @RequestMapping(path="/sweepstake")
+    public Map<String, Team> getSweepstake() throws SQLException {
+        return sweepstakeService.getSweepstake();
+    }
 }
