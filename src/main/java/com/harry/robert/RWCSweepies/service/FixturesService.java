@@ -24,6 +24,7 @@ public class FixturesService {
         return addTeamNames(allFixtures);
     }
 
+    //todo handle when null is returned by returning bac an empty list (handle on controller)
     public List<Match> getTeamFixtures(String team) throws SQLException {
         Map<String, Integer> nameToIdMap = teamRepository.getNameToIdMap();
         List<Match> teamFixtures = fixturesRepository.getTeamFixtures(nameToIdMap.get(team));
