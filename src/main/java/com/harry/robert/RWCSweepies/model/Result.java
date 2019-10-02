@@ -7,8 +7,10 @@ import lombok.Setter;
 @Getter
 public class Result {
     private int matchId;
-    private String homeTeam;
-    private String awayTeam;
+    private String homeTeamName;
+    private String awayTeamName;
+    private int homeTeamId;
+    private int awayTeamId;
     private int homeScore;
     private int homeTries;
     private int homePenalties;

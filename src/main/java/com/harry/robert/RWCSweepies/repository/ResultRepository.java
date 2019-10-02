@@ -19,17 +19,14 @@ public class ResultRepository extends GenericRepository {
 
     public List<Result> getResults() throws SQLException {
         String sql = "SELECT * FROM results " +
-                "INNER JOIN fixtures ON results.matchId=fixtures.matchId " +
-                "INNER JOIN teams ON fixtures.awayTeam=teams.teamId " +
-                "INNER JOIN teams ON fixtures.homeTeam=teams.teamId ";
+                "INNER JOIN fixtures ON results.matchId=fixtures.matchId ";
+
         return executeGetResultSQL(sql);
     }
 
     public List<Result> getTeamResults(String team) throws SQLException {
         String sql = String.format("SELECT * FROM results " +
                 "INNER JOIN fixtures ON results.matchId=fixtures.matchId " +
-                "INNER JOIN teams ON fixtures.awayTeam=teams.teamId " +
-                "INNER JOIN teams ON fixtures.homeTeam=teams.teamId " +
                 "WHERE homeTeam = '%s' OR awayTeam = '%s'", team, team);
         return executeGetResultSQL(sql);
     }
@@ -37,16 +34,14 @@ public class ResultRepository extends GenericRepository {
     public List<Result> getTypeResults(String type) throws SQLException {
         String sql = String.format("SELECT * FROM results " +
                 "INNER JOIN fixtures ON results.matchId=fixtures.matchId " +
-                "INNER JOIN teams ON fixtures.awayTeam=teams.teamId " +
-                "INNER JOIN teams ON fixtures.homeTeam=teams.teamId " +
                 "WHERE gameType = '%s'", type);
         return executeGetResultSQL(sql);
     }
 
     public void updateResults(Result result) throws SQLException {
         String sql = String.format("INSERT INTO results" +
-                "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", result.getHomeTeam(), result.getHomeScore(), result.getHomeTries(),
-                result.getHomeConversions(), result.getHomePenalties(), result.getAwayTeam(), result.getAwayScore(), result.getAwayTries(),
+                        "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", result.getHomeTeamName(), result.getHomeScore(), result.getHomeTries(),
+                result.getHomeConversions(), result.getHomePenalties(), result.getAwayTeamName(), result.getAwayScore(), result.getAwayTries(),
                 result.getAwayConversions(), result.getAwayPenalties());
 
         statement.getConnection();
@@ -63,7 +58,7 @@ public class ResultRepository extends GenericRepository {
         while (resultSet.next()) {
             Result result = new Result();
             result.setMatchId(resultSet.getInt("matchId"));
-            result.setHomeTeam(resultSet.getString("homeTeam"));
+            result.setHomeTeamId(resultSet.getInt("homeTeam"));
             result.setHomeScore(resultSet.getInt("homeScore"));
             result.setHomeTries(resultSet.getInt("homeTries"));
             result.setHomeConversions(resultSet.getInt("homeConversions"));
@@ -72,7 +67,7 @@ public class ResultRepository extends GenericRepository {
             result.setAwayTries(resultSet.getInt("awayTries"));
             result.setAwayConversions(resultSet.getInt("awayConversions"));
             result.setAwayPenalties(resultSet.getInt("awayPenalties"));
-            result.setAwayTeam(resultSet.getString("awayTeam"));
+            result.setAwayTeamId(resultSet.getInt("awayTeam"));
 
             results.add(result);
         }

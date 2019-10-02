@@ -23,7 +23,7 @@ insert into fixtures values(21, 7, 5, '2019-10-03', '06:15:00',  'Kobe Misaki, S
 insert into fixtures values(22, 16, 9, '2019-10-04', '10:45:00',  'Shizuoka Stadium Ecopa, Shizuoka Prefecture', 'Pool B');
 insert into fixtures values(23, 2, 18, '2019-10-05', '06:15:00', 'Oita Stadium, Oita Prefecture', 'Pool D');
 insert into fixtures values(24, 4, 1, '2019-10-05', '09:00:00', 'Tokyo Stadium, Tokyo', 'Pool C');
-insert into fixtures values(25, 10, Somoa, '2019-10-05', '11:30:00', 'City of Toyota Stadium, Aichi Prefecture, Toyota City', 'Pool A');
+insert into fixtures values(25, 10, 14, '2019-10-05', '11:30:00', 'City of Toyota Stadium, Aichi Prefecture, Toyota City', 'Pool A');
 insert into fixtures values(26, 12, 11, '2019-10-06', '05:45:00', 'Tokyo Stadium, Tokyo', 'Pool B');
 insert into fixtures values(27, 6, 17, '2019-10-06', '08:45:00', 'Kumamoto Stadium, Kumamoto Prefecture, Kumamoto City', 'Pool C');
 insert into fixtures values(28, 16, 3, '2019-10-08', '11:15:00',  'Kobe Misaki, Stadium, Kobe City', 'Pool B');
@@ -47,6 +47,7 @@ insert into fixtures values(45, null, null, '2019-10-27', '09:00:00',  'Internat
 insert into fixtures values(46, null, null, '2019-11-01', '09:00:00', 'Tokyo Stadium, Tokyo', 'Bronze Final');
 insert into fixtures values(47, null, null, '2019-11-02', '09:00:00',  'International Stadium Yokohama, Kanagawa Prefecture, Yokohama City', 'Final');
 
+insert into results values (1, 10, 30, 4, 2, 2, 13, 10, 1, 1, 1);
 
 --Test data
 insert into participants values (1, 'Pete');  --Paid
